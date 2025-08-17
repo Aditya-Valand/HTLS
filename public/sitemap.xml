@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<!-- Main Homepage: Highest Priority -->
+<url>
+  <loc>https://www.thelastsubmission.xyz/</loc>
+  <lastmod>2025-08-18T02:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.00</priority>
+</url>
+
+<!-- Tickets Section: High Priority -->
+<url>
+  <loc>https://www.thelastsubmission.xyz/#tickets</loc>
+  <lastmod>2025-08-18T02:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+</url>
+
+<!-- Activities Section: Medium Priority -->
+<url>
+  <loc>https://www.thelastsubmission.xyz/#activities</loc>
+  <lastmod>2025-08-18T02:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<!-- Venue Section: Medium Priority -->
+<url>
+  <loc>https://www.thelastsubmission.xyz/#venue</loc>
+  <lastmod>2025-08-18T02:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<!-- Gallery Section: Medium Priority -->
+<url>
+  <loc>https://www.thelastsubmission.xyz/#gallery</loc>
+  <lastmod>2025-08-18T02:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
+</url>
+
+<!-- FAQ Section: Lower Priority -->
+<url>
+  <loc>https://www.thelastsubmission.xyz/#faq</loc>
+  <lastmod>2025-08-18T02:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.60</priority>
+</url>
+
+<!-- Sponsors Section: Lower Priority -->
+<url>
+  <loc>https://www.thelastsubmission.xyz/#sponsors</loc>
+  <lastmod>2025-08-18T02:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.50</priority>
+</url>
+
+</urlset>
