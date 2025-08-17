@@ -1,0 +1,10 @@
+# Allow all crawlers to access everything
+User-agent: *
+Allow: /
+
+# Block crawling of build files or sensitive folders (if any)
+Disallow: /node_modules/
+Disallow: /build/
+
+# Location of your sitemap
+Sitemap: https://thelastsubmission.xyz/sitemap.xml
