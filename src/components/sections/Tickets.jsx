@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// IMPORTANT: Make sure you have included the Razorpay checkout script in your public/index.html file
+// <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 export function Tickets() {
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
     const [ticketData, setTicketData] = useState({
@@ -19,6 +22,9 @@ export function Tickets() {
     const [orderDetails, setOrderDetails] = useState(null);
     const [showPriceBreakdown, setShowPriceBreakdown] = useState(false);
 
+    // Define the backend URL
+    const BACKEND_URL = 'https://htls-backend.onrender.com';
+
     // Fetch early bird status
     useEffect(() => {
         fetchEarlyBirdStatus();
@@ -28,7 +34,8 @@ export function Tickets() {
 
     const fetchEarlyBirdStatus = async () => {
         try {
-            const response = await fetch('/api/payment/early-bird-status');
+            // Use the full backend URL
+            const response = await fetch(`${BACKEND_URL}/api/payment/early-bird-status`);
             const data = await response.json();
             setTicketData(data);
         } catch (error) {
@@ -75,7 +82,8 @@ export function Tickets() {
         setError('');
 
         try {
-            const response = await fetch('/api/payment/create-order', {
+            // Use the full backend URL
+            const response = await fetch(`${BACKEND_URL}/api/payment/create-order`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -98,9 +106,13 @@ export function Tickets() {
         }
     };
 
+
     const initiateRazorpayPayment = (orderData) => {
         const options = {
-            key: process.env.REACT_APP_RAZORPAY_KEY_ID, // Add this to your .env file
+            // IMPORTANT: Add your Razorpay Key ID to your project's environment variables
+            // For local development, create a .env file in your root directory with:
+            // REACT_APP_RAZORPAY_KEY_ID=your_key_id
+            key: import.meta.env.VITE_RAZORPAY_KEY_ID,
             amount: orderData.amount,
             currency: orderData.currency,
             name: "HTLS 2k25",
@@ -110,7 +122,6 @@ export function Tickets() {
                 // Payment successful
                 setIsFormSubmitted(true);
                 setLoading(false);
-                // Here you could verify the payment on your backend
                 console.log('Payment successful:', response);
             },
             prefill: {
@@ -122,7 +133,9 @@ export function Tickets() {
             },
             modal: {
                 ondismiss: function() {
+                    // This function is called when the user closes the modal
                     setLoading(false);
+                    setError('Payment was cancelled.');
                 }
             }
         };
@@ -184,8 +197,9 @@ export function Tickets() {
 
                 <AnimatePresence mode="wait">
                     {!isFormSubmitted ? (
-                        <motion.div
+                        <motion.form
                             key="form"
+                            onSubmit={handleFormSubmit}
                             className="backdrop-blur-xl bg-white/5 border border-yellow-400/30 p-8 rounded-3xl shadow-2xl"
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
@@ -318,7 +332,7 @@ export function Tickets() {
                                 </motion.div>
 
                                 <motion.button 
-                                    onClick={handleFormSubmit}
+                                    type="submit"
                                     disabled={loading}
                                     className={`w-full ${loading ? 'bg-gray-600' : 'bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500'} text-black text-xl font-bold py-4 px-10 rounded-xl shadow-2xl shadow-yellow-400/40 transition-all`}
                                     whileHover={!loading ? { scale: 1.02, boxShadow: "0 0 60px rgba(255, 215, 0, 0.8)" } : {}} 
@@ -339,7 +353,7 @@ export function Tickets() {
                                     )}
                                 </motion.button>
                             </div>
-                        </motion.div>
+                        </motion.form>
                     ) : (
                         <motion.div
                             key="confirmation"
