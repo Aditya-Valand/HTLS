@@ -13,6 +13,7 @@ import { FloatingElements } from './components/layout/FloatingElements';
 import { ParticleBackground } from './components/ui/ParticleBackground';
 import { StickyBanner } from './components/ui/StickyBanner';
 import { Gallery } from './components/sections/Gallery'; // Import the new Gallery component
+import { EventHighlights } from './components/sections/EventHighlights';
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -54,6 +55,7 @@ function App() {
             <Venue />
             <Gallery />
             <Sponsors />
+            <EventHighlights />
             <Tickets />
             <FAQ />
         </main>

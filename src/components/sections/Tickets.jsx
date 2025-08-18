@@ -21,6 +21,9 @@ export function Tickets() {
     const [error, setError] = useState('');
     const [orderDetails, setOrderDetails] = useState(null);
     const [showPriceBreakdown, setShowPriceBreakdown] = useState(false);
+    // Add these with your other useState hooks
+const [termsAccepted, setTermsAccepted] = useState(false);
+const [showTermsModal, setShowTermsModal] = useState(false);
 
     // Define the backend URL
     const BACKEND_URL = 'https://htls-backend.onrender.com';
@@ -330,14 +333,36 @@ export function Tickets() {
                                         )}
                                     </AnimatePresence>
                                 </motion.div>
-
+                                        {/* Add this div right before the submit button */}
+<div className="flex items-start space-x-3">
+    <input
+        id="terms"
+        name="terms"
+        type="checkbox"
+        checked={termsAccepted}
+        onChange={(e) => setTermsAccepted(e.target.checked)}
+        className="h-5 w-5 mt-1 rounded border-gray-400 text-yellow-500 focus:ring-yellow-500 cursor-pointer"
+    />
+    <div className="text-sm">
+        <label htmlFor="terms" className="font-medium text-gray-300">
+            I agree to the{' '}
+            <button
+                type="button"
+                onClick={() => setShowTermsModal(true)}
+                className="underline text-yellow-400 hover:text-yellow-300 font-semibold"
+            >
+                Terms & Conditions
+            </button>
+        </label>
+    </div>
+</div>
                                 <motion.button 
-                                    type="submit"
-                                    disabled={loading}
-                                    className={`w-full ${loading ? 'bg-gray-600' : 'bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500'} text-black text-xl font-bold py-4 px-10 rounded-xl shadow-2xl shadow-yellow-400/40 transition-all`}
-                                    whileHover={!loading ? { scale: 1.02, boxShadow: "0 0 60px rgba(255, 215, 0, 0.8)" } : {}} 
-                                    whileTap={!loading ? { scale: 0.98 } : {}}
-                                >
+    type="submit"
+    disabled={loading || !termsAccepted} // <-- MODIFICATION HERE
+    className={`w-full ${loading || !termsAccepted ? 'bg-gray-600 cursor-not-allowed' : 'bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500'} text-black text-xl font-bold py-4 px-10 rounded-xl shadow-2xl shadow-yellow-400/40 transition-all`} // <-- MODIFICATION HERE
+    whileHover={!loading && termsAccepted ? { scale: 1.02, boxShadow: "0 0 60px rgba(255, 215, 0, 0.8)" } : {}} 
+    whileTap={!loading && termsAccepted ? { scale: 0.98 } : {}}
+>
                                     {loading ? (
                                         <div className="flex items-center justify-center space-x-2">
                                             <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
@@ -389,6 +414,45 @@ export function Tickets() {
                     )}
                 </AnimatePresence>
             </div>
+            {/* Add this modal at the end of your component's return statement */}
+<AnimatePresence>
+    {showTermsModal && (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+            onClick={() => setShowTermsModal(false)}
+        >
+            <motion.div
+                initial={{ scale: 0.9, y: -20 }}
+                animate={{ scale: 1, y: 0 }}
+                exit={{ scale: 0.9, y: -20 }}
+                className="bg-gray-900 border border-yellow-400/30 rounded-2xl p-8 max-w-lg w-full text-white"
+                onClick={(e) => e.stopPropagation()} // Prevents modal from closing when clicking inside
+            >
+                <h3 className="text-2xl font-bold text-yellow-400 mb-4">🎟 Event Terms & Conditions</h3>
+                <ul className="space-y-3 text-gray-300 list-disc list-inside">
+                    <li>Tickets are non-refundable & non-transferable.</li>
+                    <li>Venue/date may change as per footfall or circumstances.</li>
+                    <li>Misbehavior or nuisance = removal by security (no refund).</li>
+                    <li>Drugs, alcohol & prohibited items strictly banned.</li>
+                    <li>Organizers are not responsible for loss, theft, or injury.</li>
+                    <li>Entry only with valid ticket & ID proof.</li>
+                    <li>By entering, you agree to being part of event photos/videos.</li>
+                    <li>Organizer’s decision is final.</li>
+                </ul>
+                <button
+                    type="button"
+                    onClick={() => setShowTermsModal(false)}
+                    className="mt-6 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold py-2 px-4 rounded-lg"
+                >
+                    Close
+                </button>
+            </motion.div>
+        </motion.div>
+    )}
+</AnimatePresence>
         </motion.section>
     );
 }
