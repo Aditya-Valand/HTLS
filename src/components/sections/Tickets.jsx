@@ -58,6 +58,7 @@ export function Tickets() {
     name: "",
     email: "",
     department: "",
+    semester: '',
     ticketQuantity: 1,
     stayTiming: "full_day", // Default value
     
@@ -388,6 +389,19 @@ export function Tickets() {
                       Others
                     </option>
                   </motion.select>
+                  <motion.select
+        name="semester"
+        value={formData.semester}
+        onChange={handleInputChange}
+        required
+        className="w-full bg-black/50 border border-yellow-400/40 rounded-xl py-4 px-6 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all text-white"
+        whileFocus={{ scale: 1.02, boxShadow: "0 0 20px rgba(255, 215, 0, 0.3)" }}
+    >
+        <option value="" disabled className="bg-black">Select Your Semester</option>
+        {[1, 3,  5, 7].map(sem => (
+            <option key={sem} value={sem} className="bg-black">{sem}</option>
+        ))}
+    </motion.select>
 
                   <motion.select
                     name="ticketQuantity"
