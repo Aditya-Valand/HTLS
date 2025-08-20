@@ -3,12 +3,12 @@ import { Image as ImageIcon, Video } from 'lucide-react';
 
 // Replace these with your actual image URLs
 const galleryImages = [
-  "https://placehold.co/600x400/1a1a1a/eab308?text=Palace+Facade",
-  "https://placehold.co/400x600/1a1a1a/eab308?text=Grand+Staircase",
-  "https://placehold.co/600x400/1a1a1a/eab308?text=Ballroom",
-  "https://placehold.co/400x600/1a1a1a/eab308?text=Gardens+at+Night",
-  "https://placehold.co/600x400/1a1a1a/eab308?text=Royal+Interior",
-  "https://placehold.co/600x400/1a1a1a/eab308?text=Chandelier+Detail",
+  "/src/assets/img1.png",
+  "/src/assets/img2.png",
+  "/src/assets/img3.png",
+  "/src/assets/img4.png",
+  "https://images.trvl-media.com/lodging/77000000/76890000/76889800/76889781/93ded020_z.jpg",
+  "/src/assets/img5.png",
 ];
 
 export function Gallery() {

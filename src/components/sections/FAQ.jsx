@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const faqData = [
-    { question: "Is this event open to students from other colleges?", answer: "This event is exclusively for the students of all departments of Government Engineering College, Rajkot (GECR). A valid college ID may be required for entry." },
-    { question: "What does the ticket price include?", answer: "The ₹500 ticket price includes entry to the event, access to all activities (ramp walk, truth & dare, karaoke, dance battles, photo booth), unlimited food and soft drinks, and participation in lucky draws." },
+    { question: "Is this event open to students from other colleges?", answer: "This event is exclusively for the students of all departments of Government Engineering College, Rajkot (GECR). A valid ticket may be required for entry." },
+    { question: "What does the ticket price include?", answer: "The ₹549 ticket price includes entry to the event, access to all activities (ramp walk, truth & dare, karaoke, dance battles, photo booth), unlimited food and soft drinks, and participation in lucky draws." },
     { question: "Can I buy tickets at the venue?", answer: "Tickets are available online only and are expected to sell out quickly. We highly recommend booking your ticket in advance through this website to guarantee your spot at this epic celebration." },
     { question: "What should I wear for the ramp walk?", answer: "Dress to impress! Whether it's formal, casual chic, or your own unique style - show off your fashion sense. There will be prizes for the best dressed participants!" },
     { question: "Are there any prizes for the activities?", answer: "We have exciting prizes for winners of dance battles, best dressed in ramp walk, karaoke champions, and surprise gifts through lucky draws throughout the night." },

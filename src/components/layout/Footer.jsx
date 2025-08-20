@@ -6,6 +6,7 @@ export function Footer() {
   // Replace these placeholder URLs with your actual links
   const instagramUrl = "https://www.instagram.com/hungama.x.tls2k25/";
   const whatsappUrl = "https://chat.whatsapp.com/JoYSKW9d9nc2zplrnRJx2s?mode=ac_t";
+  const personalInstagramUrl = "https://www.instagram.com/aditya_a4555/";
 
   return (
     <footer className="py-16 text-center border-t border-yellow-400/30 bg-gradient-to-r from-gray-900/60 to-black/60 backdrop-blur-xl">
@@ -56,6 +57,17 @@ export function Footer() {
         >
           Crafted with passion by the innovators of GECR ✨
         </motion.p>
+        <div className="mt-12 border-t border-gray-700/50 pt-8">
+            <a
+                href={personalInstagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-yellow-400 transition-colors duration-300 text-sm inline-flex items-center space-x-2"
+            >
+                <span>Made by Aditya Valand</span>
+                <Instagram className="h-4 w-4" />
+            </a>
+        </div>
       </div>
     </footer>
   );

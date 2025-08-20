@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 function OfflineConfirmationScreen({ details, formData }) {
   const handleNotifyClick = () => {
     // --- IMPORTANT: Replace with your team's WhatsApp number ---
-    const organizerPhoneNumber = "7863028015"; // Use country code, no "+" or spaces
+    const organizerPhoneNumber = "918469434555"; // Use country code, no "+" or spaces
 
     const message = `Hello HTLS Team,\n\nI have reserved my ticket(s) for offline payment.\n\n- Name: ${formData.name}\n- Email: ${formData.email}\n- Department: ${formData.department}\n- Tickets: ${details.ticketQuantity}\n- Order ID: ${details.orderId}\n- Amount to Pay: ₹${details.totalAmount}\n\nPlease let me know how to proceed with the payment.`;
 
