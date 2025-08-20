@@ -2,13 +2,20 @@ import { motion } from 'framer-motion';
 import { Image as ImageIcon, Video } from 'lucide-react';
 
 // Replace these with your actual image URLs
+import img1 from '../../assets/img1.PNG'; 
+import img2 from '../../assets/img2.PNG';
+import img3 from '../../assets/img3.PNG';
+import img4 from '../../assets/img4.PNG';
+import img5 from '../../assets/img5.PNG';
+
+// Use the imported variables in the array. External URLs can remain as strings.
 const galleryImages = [
-  "/src/assets/img1.png",
-  "/src/assets/img2.png",
-  "/src/assets/img3.png",
-  "/src/assets/img4.png",
-  "https://images.trvl-media.com/lodging/77000000/76890000/76889800/76889781/93ded020_z.jpg",
-  "/src/assets/img5.png",
+  img1,
+  img2,
+  img3,
+  img4,
+  "https://images.trvl-media.com/lodging/77000000/76890000/76889800/76889781/93ded020_z.jpg", // This one is fine as a string
+  img5,
 ];
 
 export function Gallery() {
