@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Star } from "lucide-react";
+import { Users } from "lucide-react"; // Changed icon for relevance
 
 export function Hero() {
   const { scrollYProgress } = useScroll();
@@ -7,7 +7,6 @@ export function Hero() {
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
 
   return (
-    // Corrected padding for all screen sizes
     <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 relative pt-40 md:pt-32">
       <motion.div
         className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-orange-500/10 to-red-500/10"
@@ -74,13 +73,14 @@ export function Hero() {
           for every student.
         </motion.p>
         
+        {/* --- UPDATED OFFER TEXT --- */}
         <motion.div 
           className="mt-8 text-lg text-yellow-400 font-semibold"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.8 }}
         >
-          First 102 Students Get 10% OFF! Don't Miss Out!
+          Bring Your Crew & Save! Group Discounts Now Live!
         </motion.div>
 
         <motion.div
@@ -89,6 +89,7 @@ export function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 2 }}
         >
+          {/* --- UPDATED BUTTON --- */}
           <motion.a
             href="#tickets"
             className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-black text-xl font-bold py-5 px-12 rounded-full shadow-2xl shadow-yellow-400/40 inline-flex items-center gap-3"
@@ -107,8 +108,8 @@ export function Hero() {
             }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <Star className="animate-spin" />
-            Book Now for <span className="line-through opacity-70">₹549</span> ₹494!
+            <Users className="animate-pulse" />
+            Get Your Tickets!
           </motion.a>
         </motion.div>
       </motion.div>

@@ -1,5 +1,13 @@
 import { motion } from 'framer-motion';
-import { MapPin, Gem } from 'lucide-react'; // Changed icon to Gem for a more royal feel
+import { MapPin, Gem } from 'lucide-react';
+
+// Centralized venue information for easy updates
+const venueDetails = {
+    name: "Shree Banquet",
+    address: "Mavdi Main Road, Pal, Rajkot, Gujarat 360004",
+    description: "Step into a world of elegance. The stunning architecture and regal ambiance of Shree Banquet provide the perfect backdrop for an unforgettable day of celebration, music, and memories.",
+    mapSrc: "http://googleusercontent.com/maps.google.com/3https://maps.google.com/?cid=18200363022388710575&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ"
+};
 
 export function Venue() {
     return (
@@ -23,7 +31,7 @@ export function Venue() {
                         The Royal Venue
                     </h2>
                     <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
-                        Experience a night of grandeur at a truly spectacular heritage location.
+                        Experience a night of grandeur at a truly spectacular location.
                     </p>
                 </motion.div>
 
@@ -38,14 +46,14 @@ export function Venue() {
                             <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 2, repeat: Infinity }}>
                                 <Gem size={50} className="text-yellow-400" />
                             </motion.div>
-                            Ratna Vilas Palace
+                            {venueDetails.name}
                         </h3>
                         <p className="text-lg md:text-xl mb-6 text-gray-300 font-medium flex items-start gap-2">
                             <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-yellow-500" />
-                            <span>Kalavad Rd, near ISKCON temple, Rajkot, Gujarat 360005</span>
+                            <span>{venueDetails.address}</span>
                         </p>
                         <p className="text-gray-400 text-lg leading-relaxed">
-                            Step into a world of elegance and history. The stunning architecture and regal ambiance of Ratna Vilas Palace provide the perfect backdrop for an unforgettable day of celebration, music, and memories.
+                            {venueDetails.description}
                         </p>
                     </motion.div>
 
@@ -57,16 +65,16 @@ export function Venue() {
                         viewport={{ once: true }}
                         whileHover={{ scale: 1.02, boxShadow: "0 0 50px rgba(255, 215, 0, 0.5)" }}
                     >
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.486799435688!2d70.73311507507026!3d22.26005094406286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959cb5e4c276145%3A0xace1c96ad715c3e1!2sRATNA%20VILAS%20PALACE!5e0!3m2!1sen!2sin!4v1723928111951!5m2!1sen!2sin"
-                            width="100%"
-                            height="100%"
-                            style={{ border: 0 }}
-                            allowFullScreen
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            title="Ratna Vilas Palace Location"
-                        />
+                       <iframe
+  src="https://www.google.com/maps?q=Shree+Banquet,+Mavdi+Main+Road,+Rajkot&output=embed"
+  width="100%"
+  height="100%"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  title={`${venueDetails.name} Location`}
+/>
                     </motion.div>
                 </div>
             </div>

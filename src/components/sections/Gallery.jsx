@@ -1,24 +1,13 @@
 import { motion } from 'framer-motion';
-import { Image as ImageIcon, Video } from 'lucide-react';
-
-// Replace these with your actual image URLs
-import img1 from '../../assets/img1.PNG'; 
+// Your image imports remain the same
+import img1 from '../../assets/img1.PNG';
 import img2 from '../../assets/img2.PNG';
 import img3 from '../../assets/img3.PNG';
 import img4 from '../../assets/img4.PNG';
 import img5 from '../../assets/img5.PNG';
 
-// Use the imported variables in the array. External URLs can remain as strings.
-const galleryImages = [
-  img1,
-  img2,
-  img3,
-  img4,
-  "https://images.trvl-media.com/lodging/77000000/76890000/76889800/76889781/93ded020_z.jpg", // This one is fine as a string
-  img5,
-];
-
 export function Gallery() {
+  // We place the images manually in the grid for a custom layout
   return (
     <motion.section
       id="gallery"
@@ -44,51 +33,59 @@ export function Gallery() {
           </p>
         </motion.div>
 
-        {/* Image Gallery */}
-        <div className="columns-2 md:columns-3 gap-4 space-y-4">
-          {galleryImages.map((src, index) => (
-            <motion.div
-              key={index}
-              className="overflow-hidden rounded-2xl border-2 border-yellow-400/20 shadow-lg"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.05, zIndex: 10 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <img
-                className="w-full h-auto object-cover"
-                src={src}
-                alt={`Venue Image ${index + 1}`}
-              />
-            </motion.div>
-          ))}
-        </div>
+        {/* --- UPDATED CSS GRID LAYOUT --- */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {/* Image 1: Main focal point, larger */}
+          <motion.div
+            className="col-span-2 row-span-2 overflow-hidden rounded-2xl border-2 border-yellow-400/20 shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.05, zIndex: 10 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <img className="w-full h-full object-cover" src={img1} alt="Venue Image 1" />
+          </motion.div>
 
-        {/* Video Section */}
-        <motion.div
-          className="mt-20 text-center"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-            <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent mb-8">
-                Watch The Venue Tour
-            </h3>
-            <div className="aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden border-2 border-purple-400/30 shadow-2xl shadow-purple-500/20">
-                {/* Replace this with your actual video embed iframe */}
-                <iframe 
-                    width="100%" 
-                    height="100%" 
-                    src="https://www.youtube.com/embed/2IN13igqQVg?start=5" 
-                    title="YouTube video player" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen
-                ></iframe>
-            </div>
-        </motion.div>
+          {/* Image 2 */}
+          <motion.div
+            className="col-span-1 overflow-hidden rounded-2xl border-2 border-yellow-400/20 shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.05, zIndex: 10 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <img className="w-full h-full object-cover" src={img2} alt="Venue Image 2" />
+          </motion.div>
+
+          {/* Image 3 */}
+          <motion.div
+            className="col-span-1 overflow-hidden rounded-2xl border-2 border-yellow-400/20 shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.05, zIndex: 10 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <img className="w-full h-full object-cover" src={img3} alt="Venue Image 3" />
+          </motion.div>
+
+          {/* Image 4: Spans two columns */}
+          <motion.div
+            className="col-span-2 overflow-hidden rounded-2xl border-2 border-yellow-400/20 shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.05, zIndex: 10 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <img className="w-full h-full object-cover" src={img4} alt="Venue Image 4" />
+          </motion.div>
+          
+          {/* Image 5 would continue to fill the grid... */}
+          {/* You can add img5 here if you like, e.g., <div className="col-span-2">...</div> */}
+        </div>
       </div>
     </motion.section>
   );

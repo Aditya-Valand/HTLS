@@ -1,15 +1,15 @@
 import { motion } from 'framer-motion';
 
-// Set this to true when you have sponsors to show
-const showSponsors = false;
+// 1. Import the new sponsor's logo
+import pramukhSoundLogo from '../../assets/SPS Logo CMYK.png';
 
+// Set this to true to show the sponsors
+const showSponsors = true;
+
+// 2. Update the data with the real sponsor
 const sponsorsData = [
-    { name: "TechCorp", logo: "https://placehold.co/120x80/1f2937/eab308?text=TechCorp" },
-    { name: "FoodieHub", logo: "https://placehold.co/120x80/1f2937/eab308?text=FoodieHub" },
-    { name: "StyleZone", logo: "https://placehold.co/120x80/1f2937/eab308?text=StyleZone" },
-    { name: "MusicBox", logo: "https://placehold.co/120x80/1f2937/eab308?text=MusicBox" },
-    { name: "EventPro", logo: "https://placehold.co/120x80/1f2937/eab308?text=EventPro" },
-    { name: "PhotoMagic", logo: "https://placehold.co/120x80/1f2937/eab308?text=PhotoMagic" },
+    { name: "Shree Pramukh Sound", logo: pramukhSoundLogo },
+    // You can add more real sponsors here as they join
 ];
 
 export function Sponsors() {
@@ -39,12 +39,12 @@ export function Sponsors() {
                 </motion.div>
 
                 {showSponsors ? (
-                    // --- This is your original code for displaying sponsors ---
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                    // 3. Updated layout to center the sponsor(s)
+                    <div className="flex justify-center items-center flex-wrap gap-8">
                         {sponsorsData.map((sponsor, index) => (
                             <motion.div
                                 key={index}
-                                className="group backdrop-blur-xl bg-white/5 border border-yellow-400/20 p-6 rounded-2xl text-center hover:bg-yellow-400/10 transition-all duration-300"
+                                className="group backdrop-blur-xl bg-white/5 border border-yellow-400/20 p-6 rounded-2xl text-center hover:bg-yellow-400/10 transition-all duration-300 w-full max-w-[200px]"
                                 initial={{ y: 50, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -54,7 +54,7 @@ export function Sponsors() {
                                 <motion.img
                                     src={sponsor.logo}
                                     alt={sponsor.name}
-                                    className="w-full h-16 object-contain mb-4 filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                                    className="w-full h-20 object-contain mb-4 transition-all duration-300" // Removed grayscale for the main sponsor
                                     whileHover={{ scale: 1.1 }}
                                 />
                                 <p className="text-sm font-medium text-gray-400 group-hover:text-yellow-400 transition-colors">
@@ -64,7 +64,7 @@ export function Sponsors() {
                         ))}
                     </div>
                 ) : (
-                    // --- This is the new "Coming Soon" placeholder ---
+                    // This is the "Coming Soon" placeholder
                     <motion.div 
                         className="text-center py-16"
                         initial={{ opacity: 0, scale: 0.9 }}

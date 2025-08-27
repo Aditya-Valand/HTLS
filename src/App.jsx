@@ -46,7 +46,7 @@ function App() {
         />
         <ParticleBackground />
         <FloatingElements />
-        <StickyBanner />
+          <StickyBanner/>
         <Header />
         <main>
             <Hero />

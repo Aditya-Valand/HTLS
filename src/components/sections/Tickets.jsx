@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { GroupDiscountBanner } from "./GroupDiscountBanner";
 // import { Award, Check } from 'lucide-react';
 
 // IMPORTANT: Make sure you have included the Razorpay checkout script in your public/index.html file
@@ -259,9 +260,10 @@ export function Tickets() {
             Don't miss out on the event of a lifetime!
           </p>
         </motion.div>
+        <GroupDiscountBanner/>
 
         {/* Early Bird Offer Card */}
-        <motion.div
+        {/* <motion.div
           className="mb-8 p-6 border-2 border-dashed border-yellow-400/50 rounded-2xl bg-yellow-400/10 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -289,7 +291,7 @@ export function Tickets() {
           <p className="text-sm text-gray-300">
             {ticketData.ticketsSold} of {ticketData.totalEarlyBirdTickets} sold
           </p>
-        </motion.div>
+        </motion.div> */}
 
         <AnimatePresence mode="wait">
           {!isFormSubmitted ? (
@@ -398,7 +400,7 @@ export function Tickets() {
         whileFocus={{ scale: 1.02, boxShadow: "0 0 20px rgba(255, 215, 0, 0.3)" }}
     >
         <option value="" disabled className="bg-black">Select Your Semester</option>
-        {[1, 3,  5, 7].map(sem => (
+        {[1,2, 3,,4,  5,6, 7].map(sem => (
             <option key={sem} value={sem} className="bg-black">{sem}</option>
         ))}
     </motion.select>
