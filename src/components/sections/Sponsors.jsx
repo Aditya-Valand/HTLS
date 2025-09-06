@@ -7,7 +7,7 @@ import mexclogo from '../../assets/img6.png'// This one is real
 import jklogo from '../../assets/jkimpexlogo.JPG'
 import sendme6 from '../../assets/sendme6.png'
 import vnslogo from '../../assets/vnslogo.png'
-import bonanza from '../../assets/bonanza.png'
+import bonanza from '../../assets/Bonanza.png'
 import fjartist from '../../assets/fj art.jpg'
 // import rkLogo from '../../assets/Rk.jpg'
 // Replace these placeholders with your actual logo files
