@@ -8,7 +8,7 @@ import jklogo from '../../assets/jkimpexlogo.JPG'
 import sendme6 from '../../assets/sendme6.png'
 import vnslogo from '../../assets/vnslogo.png'
 import bonanza from '../../assets/Bonanza.png'
-import fjartist from '../../assets/fj art.jpg'
+import fjartist from '../../assets/Fj art.jpg'
 // import rkLogo from '../../assets/Rk.jpg'
 // Replace these placeholders with your actual logo files
 // const mexcLogo = "https://placehold.co/300x150/111827/facc15?text=MEXC+Foundation&font=raleway";
