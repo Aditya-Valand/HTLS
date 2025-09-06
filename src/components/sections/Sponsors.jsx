@@ -7,7 +7,9 @@ import mexclogo from '../../assets/img6.png'// This one is real
 import jklogo from '../../assets/jkimpexlogo.JPG'
 import sendme6 from '../../assets/sendme6.png'
 import vnslogo from '../../assets/vnslogo.png'
-import rkLogo from '../../assets/Rk.jpg'
+import bonanza from '../../assets/bonanza.png'
+import fjartist from '../../assets/fj art.jpg'
+// import rkLogo from '../../assets/Rk.jpg'
 // Replace these placeholders with your actual logo files
 // const mexcLogo = "https://placehold.co/300x150/111827/facc15?text=MEXC+Foundation&font=raleway";
 // const sendme6Logo = "https://placehold.co/250x125/111827/fb923c?text=SENDME6&font=raleway";
@@ -27,9 +29,8 @@ const sponsors = {
     { name: "Shree Pramukh Sound", logo: pramukhSoundLogo },
     { name: "JK Impex", logo: jklogo },
     { name: "VNS Perfumes", logo: vnslogo},
-  ],
-  supportedBy: [
-    { name: "RK", logo: rkLogo }
+    { name: "Bonanza", logo: bonanza},
+    { name: "FJ artist", logo: fjartist},
   ]
 };
 
@@ -49,7 +50,7 @@ const SponsorCard = ({ sponsor, tier }) => {
     title: 'h-24 md:h-28',
     poweredBy: 'h-20 md:h-24',
     coPoweredBy: 'h-16 md:h-20',
-    supportedBy: 'h-14 md:h-16',
+    
   };
 
   return (
@@ -125,12 +126,12 @@ export function Sponsors() {
                         </motion.div>
                         
                         {/* --- Supported By Tier --- */}
-                        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.8 }} viewport={{ once: true }}>
+                        {/* <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.8 }} viewport={{ once: true }}>
                              <h3 className="text-center text-base font-medium text-gray-400 tracking-wider uppercase mb-6">Supported By</h3>
                             <div className="max-w-xs mx-auto">
                                 <SponsorCard sponsor={sponsors.supportedBy[0]} tier="supportedBy" />
                             </div>
-                        </motion.div>
+                        </motion.div> */}
                     </div>
                 ) : (
                     <motion.div className="text-center py-16" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>

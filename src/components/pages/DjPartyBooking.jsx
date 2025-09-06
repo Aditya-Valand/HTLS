@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Music, Zap, UtensilsCrossed, Mic, Phone, PartyPopper, ShieldCheck } from 'lucide-react';
 
-const DJ_TICKET_PRICE = 499;
+const DJ_TICKET_PRICE = 399;
 
 // --- NEW: A static, always-visible banner component ---
 function GroupOfferBanner() {
@@ -121,10 +121,9 @@ export function DjPartyBooking() {
                             DJ Party Access
                         </h1>
                         <p className="mt-4 text-xl text-gray-300">6 PM - 10 PM | An Unforgettable Night</p>
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 text-center text-sm font-medium text-gray-300">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 text-center text-sm font-medium text-gray-300">
                             <div className="bg-white/5 p-4 rounded-xl border border-white/10"><Music className="w-7 h-7 mx-auto mb-2 text-pink-400" /> Live DJ Set</div>
                             <div className="bg-white/5 p-4 rounded-xl border border-white/10"><UtensilsCrossed className="w-7 h-7 mx-auto mb-2 text-green-400" /> Dinner Included</div>
-                            <div className="bg-white/5 p-4 rounded-xl border border-white/10"><Mic className="w-7 h-7 mx-auto mb-2 text-purple-400" /> Stand-up Comedy</div>
                         </div>
                     </motion.div>
                     
