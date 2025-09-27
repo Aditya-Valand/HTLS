@@ -28,7 +28,6 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: { staggerChildren: 0.15 }
-    
   }
 };
 
@@ -42,7 +41,9 @@ const cardVariants = {
 };
 
 export function RecentUpdatesSection() {
+  
   return (
+
     <section id="updates" className="py-24 sm:py-32 border-t border-border/50">
       <div className="container mx-auto px-4">
         <motion.div
