@@ -7,6 +7,7 @@ import { MissionSection } from "../components/sections/Mission-section";
 import { WhatWeDoSection } from "../components/sections/whatwedo.jsx";
 import { EventsSection } from "../components/sections/event-section.jsx";
 import { CommunitySection } from "../components/sections/community-section.jsx";
+import { CollaboratorsSection } from "../components/sections/collaborators-section.jsx";
 
 export function HomePage() {
   return (
@@ -17,6 +18,7 @@ export function HomePage() {
     <WhatWeDoSection />
     {/* <EventsSection /> */}
     <CommunitySection />
+    <CollaboratorsSection />
       <RecentUpdatesSection />
       <GetInvolvedSection />
     </>
