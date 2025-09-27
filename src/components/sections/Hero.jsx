@@ -1,117 +1,52 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Star } from "lucide-react";
+// src/components/sections/hero-section.jsx
+import { Button } from "../../components/ui/button";
+import { MessageCircle, Twitter } from "lucide-react";
+import { motion } from "framer-motion";
 
-export function Hero() {
-  const { scrollYProgress } = useScroll();
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
-
+export function HeroSection() {
   return (
-    // Corrected padding for all screen sizes
-    <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 relative pt-40 md:pt-32">
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-orange-500/10 to-red-500/10"
-        style={{ y: backgroundY }}
-      />
-
-      <motion.div
-        className="z-10"
-        style={{ y: textY }}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <motion.div className="mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
-          <span className="text-2xl md:text-3xl text-transparent bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text font-bold tracking-wider">
-            Team TLRC Presents
-          </span>
-        </motion.div>
-
-        <motion.h1
-          className="text-7xl md:text-9xl lg:text-[12rem] font-black leading-tight"
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.7, ease: "easeOut" }}
-        >
-          <motion.span
-            className="block bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent"
-            animate={{
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-            }}
-            transition={{ duration: 3, repeat: Infinity }}
-            style={{ backgroundSize: "200% 200%" }}
-          >
-            Hungama
-          </motion.span>
-          <motion.span
-            className="block text-5xl md:text-7xl lg:text-8xl bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 bg-clip-text text-transparent mt-2"
-            animate={{
-              rotate: [0, 1, -1, 0],
-              scale: [1, 1.02, 1],
-            }}
-            transition={{ duration: 4, repeat: Infinity }}
-          >
-            x The Last Submission
-          </motion.span>
-        </motion.h1>
-
-        <motion.h2
-          className="text-4xl md:text-6xl font-bold mt-6 bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 bg-clip-text text-transparent"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
-        >
-          2K25
-        </motion.h2>
-
-        <motion.p
-          className="mt-8 text-xl md:text-2xl max-w-4xl mx-auto font-light text-gray-300 leading-relaxed"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5 }}
-        >
-          The most epic celebration in GECR history! A night of unforgettable memories, crazy activities, and pure fun
-          for every student.
-        </motion.p>
-        
-        <motion.div 
-          className="mt-8 text-lg text-yellow-400 font-semibold"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.8 }}
-        >
-          First 102 Students Get 10% OFF! Don't Miss Out!
-        </motion.div>
-
+    <section id="hero" className="min-h-screen w-full flex items-center justify-center relative overflow-hidden">
+      {/* Background Gradient & Grid */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_200px,rgba(0,124,240,0.15),transparent)]"></div>
+        <div
+          className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjMsMzcsNjQsMC4xKSI+PHBhdGggZD0iTTAgLjUgMzIgLjVNMCA4LjUgMzIgOC41TTAgMTYuNSAzMiAxNi41TTAgMjQuNSAzMiAyNC41TS41IDAgLjUgMzJNOS41IDAgOS41IDMyTTE3LjUgMCAxNy41IDMyTTI1LjUgMCAyNS41IDMyIiAvPjwvc3ZnPg==')]"
+          style={{ maskImage: 'radial-gradient(ellipse 80% 50% at 50% 120%, #000 0%, transparent 100%)' }}
+        ></div>
+      </div>
+      
+      <div className="container mx-auto px-4 text-center relative z-10">
         <motion.div
-          className="mt-6 flex flex-col sm:flex-row gap-6 justify-center items-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 2 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <motion.a
-            href="#tickets"
-            className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-black text-xl font-bold py-5 px-12 rounded-full shadow-2xl shadow-yellow-400/40 inline-flex items-center gap-3"
-            whileHover={{
-              scale: 1.1,
-              boxShadow: "0 0 60px rgba(255, 215, 0, 0.8)",
-              rotate: 2,
-            }}
-            whileTap={{ scale: 0.95 }}
-            animate={{
-              boxShadow: [
-                "0 0 30px rgba(255, 215, 0, 0.4)",
-                "0 0 50px rgba(255, 215, 0, 0.7)",
-                "0 0 30px rgba(255, 215, 0, 0.4)",
-              ],
-            }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <Star className="animate-spin" />
-            Book Now for <span className="line-through opacity-70">₹549</span> ₹494!
-          </motion.a>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tighter">
+            Empowering India's Next
+            <br />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)]">
+              Web3 Generation
+            </span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+            A community for the youth of India to learn, build, and connect in the global blockchain ecosystem.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="text-lg px-8 py-6 shadow-[0_0_20px_rgba(0,124,240,0.4)] hover:shadow-[0_0_30px_rgba(0,124,240,0.6)] transition-shadow">
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Join our Community
+            </Button>
+            <a href="https://twitter.com/hxtlsdao" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
+                <Twitter className="mr-2 h-5 w-5" />
+                Follow on Twitter
+              </Button>
+            </a>
+          </div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }
