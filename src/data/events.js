@@ -1,22 +1,35 @@
 // src/data/events.js
 
-// This is the master list of all your updates.
-// Both RecentUpdatesSection and UpdateDetailPage will use this file.
 export const allUpdatesData = [
   {
     id: 1,
-    imageUrl: 'https://images.unsplash.com/photo-1639762681057-408e52192e50?q=80&w=2670&auto=format&fit=crop',
-    date: '24 Sep, 2025',
-    title: 'HxTLS DAO Arrives!',
-    description: 'A deep-dive workshop aimed at bridging the gap between theoretical Web3 concepts and practical, real-world applications. Attendees engaged in hands-on coding sessions, explored smart contract development, and discussed the future of decentralized applications.',
-    category: 'news-online',
-    location: 'Startup Mission, Rajkot',
-    type: 'Meetup',
+    imageUrl: 'https://images.unsplash.com/photo-1559757175-570e85540824?auto=format&fit=crop&q=80&w=2000',
+    date: '3 Jun, 2025',
+    title: 'Web3 Into Reality',
+    description: 'A deep-dive workshop session at the Govt College of Engineering.',
+    category: 'workshop',
+    location: 'Govt College of Engineering, [City]',
+    type: 'Workshop',
     gallery: [
-      'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2670&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2574&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1642104704074-af0f48722695?q=80&w=2532&auto=format&fit=crop',
-    ]
+      'https://images.unsplash.com/photo-1590608897129-79a1d8e8a1f1?auto=format&fit=crop&q=80&w=2000',
+      'https://images.unsplash.com/photo-1555949963-aa79dcee981d?auto=format&fit=crop&q=80&w=2000',
+      'https://images.unsplash.com/photo-1564869734497-5be7c8323c3e?auto=format&fit=crop&q=80&w=2000',
+    ],
   },
-  // Add your other events here with the same structure
+  {
+    id: 2,
+    imageUrl: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=2000',
+    date: '10 Aug, 2025',
+    title: 'Decentralized Future Hackathon',
+    description: 'A 24-hour hackathon focused on building innovative dApps and solutions.',
+    category: 'hackathon',
+    location: '[Venue Name, City]',
+    type: 'Hackathon',
+    gallery: [
+      'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=2000',
+      'https://images.unsplash.com/photo-1525199013679-9c7a63e6cfea?auto=format&fit=crop&q=80&w=2000',
+      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2000',
+    ],
+  },
+  // add more items as needed
 ];

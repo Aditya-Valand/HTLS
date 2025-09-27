@@ -1,7 +1,7 @@
 // src/App.jsx
 import { Routes, Route } from 'react-router-dom';
-import { Header } from './components/layout/header.jsx';
-import { Footer } from './components/layout/footer.jsx';
+import { Header } from './components/layout/Header.jsx';
+import { Footer } from './components/layout/Footer.jsx';
 import { HomePage } from './pages/HomePage.jsx';
 import { UpdateDetailPage } from './pages/UpdateDetailPage.jsx';
 import { InquiryPage } from './pages/InquiryPage.jsx';
