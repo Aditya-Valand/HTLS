@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Trophy, Flag, Target } from 'lucide-react';
+import { Card } from '@/components/ui/card';
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -54,42 +55,48 @@ export function AboutSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="max-w-3xl mx-auto text-muted-foreground text-lg mb-20 text-balance"
+          className="max-w-3xl font-hero  mx-auto text-muted-foreground text-lg mb-20 text-balance tracking-wide"
         >
           HxTLS is a social community that connects everyone on Web3 in India in a contextually meaningful way. The community provides opportunity for individuals in the Web3 space to connect and uplift each and every member. With an objective to setup a Web3 ecosystem in India to provide education and networking opportunities to members to build, grow, and scale Web3.
         </motion.p>
         
         {/* === Part 4: Mission, Vision, Goals === */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <motion.div custom={0} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }}>
-            <div className="bg-secondary/30 p-8 rounded-lg h-full ">
-              <div className="inline-block p-4 bg-secondary rounded-xl mb-4">
-                <Trophy className="h-8 w-8 text-primary"/>
+          <Card className="p-8 h-full bg-secondary/50 backdrop-blur-sm border border-white/10 shadow-xl shadow-black/25 hover:border-white/20 transition-all duration-300 group hover:scale-105">
+            <motion.div custom={0} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }}>
+              <div className="bg-secondary/30 p-8 rounded-lg h-full">
+                <div className="inline-block p-4 bg-secondary rounded-xl mb-4">
+                  <Trophy className="h-8 w-8 text-primary"/>
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Mission</h3>
+                <p className="text-muted-foreground font-hero">Democratize Web3 knowledge, resources & accessibility and build India's largest Web3 community.</p>
               </div>
-              <h3 className="text-2xl font-bold mb-2">Mission</h3>
-              <p className="text-muted-foreground">Democratize Web3 knowledge, resources & accessibility and build India's largest Web3 community.</p>
-            </div>
-          </motion.div>
+            </motion.div>
+          </Card>
 
-          <motion.div custom={1} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }}>
-            <div className="bg-secondary/30 p-8 rounded-lg h-full">
-              <div className="inline-block p-4 bg-secondary rounded-xl mb-4">
-                <Flag className="h-8 w-8 text-primary"/>
+          <Card className="p-8 h-full bg-secondary/50 backdrop-blur-sm border border-white/10 shadow-xl shadow-black/25 hover:border-white/20 transition-all duration-300 group hover:scale-105">
+            <motion.div custom={1} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }}>
+              <div className="bg-secondary/30 p-8 rounded-lg h-full">
+                <div className="inline-block p-4 bg-secondary rounded-xl mb-4">
+                  <Flag className="h-8 w-8 text-primary"/>
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Vision</h3>
+                <p className="text-muted-foreground font-hero">To provide education, job & networking opportunities to enthusiasts to build, grow and scale in Web3.</p>
               </div>
-              <h3 className="text-2xl font-bold mb-2">Vision</h3>
-              <p className="text-muted-foreground">To provide education, job & networking opportunities to enthusiasts to build, grow and scale in Web3.</p>
-            </div>
-          </motion.div>
+            </motion.div>
+          </Card>
 
-          <motion.div custom={2} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }}>
-            <div className="bg-secondary/30 p-8 rounded-lg h-full">
-              <div className="inline-block p-4 bg-secondary rounded-xl mb-4">
-                <Target className="h-8 w-8 text-primary"/>
+          <Card className="p-8 h-full bg-secondary/50 backdrop-blur-sm border border-white/10 shadow-xl shadow-black/25 hover:border-white/20 transition-all duration-300 group hover:scale-105">
+            <motion.div custom={2} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }}>
+              <div className="bg-secondary/30 p-8 rounded-lg h-full">
+                <div className="inline-block p-4 bg-secondary rounded-xl mb-4">
+                  <Target className="h-8 w-8 text-primary"/>
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Goals</h3>
+                <p className="text-muted-foreground  font-hero">To make India a global Web3 hub.</p>
               </div>
-              <h3 className="text-2xl font-bold mb-2">Goals</h3>
-              <p className="text-muted-foreground">To make India a global Web3 hub.</p>
-            </div>
-          </motion.div>
+            </motion.div>
+          </Card>
         </div>
       </div>
     </section>

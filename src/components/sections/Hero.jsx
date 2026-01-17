@@ -21,7 +21,7 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tighter">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-hero mb-6 tracking-tighter">
             Empowering India's Next
             <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)]">
@@ -29,15 +29,17 @@ export function HeroSection() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground  mb-12 max-w-2xl mx-auto">
             A community for the youth of India to learn, build, and connect in the global blockchain ecosystem.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-6 shadow-[0_0_20px_rgba(0,124,240,0.4)] hover:shadow-[0_0_30px_rgba(0,124,240,0.6)] transition-shadow">
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Join our Community
-            </Button>
+            <a href="https://www.instagram.com/hxtls_dao" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="text-lg px-8 py-6 shadow-[0_0_20px_rgba(0,124,240,0.4)] hover:shadow-[0_0_30px_rgba(0,124,240,0.6)] transition-shadow">
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Join our Community
+              </Button>
+            </a>
             <a href="https://twitter.com/hxtlsdao" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" size="lg" className="text-lg px-8 py-6">
                 <Twitter className="mr-2 h-5 w-5" />

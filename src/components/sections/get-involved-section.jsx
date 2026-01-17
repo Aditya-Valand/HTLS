@@ -67,7 +67,7 @@ export function GetInvolvedSection() {
               Help us shape the future of Web3 in India. We're looking for passionate individuals to help with events, content, and more.
             </p>
             <Button size="lg" className="w-fit group mt-auto bg-gradient-to-r from-primary to-cyan-400 text-white border-0">
-              Apply Now <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              Opening Soon... 
             </Button>
           </GridItem>
 
@@ -79,7 +79,12 @@ export function GetInvolvedSection() {
             <p className="text-muted-foreground mb-6 flex-grow">
               Connect with thousands of builders, creators, and enthusiasts.
             </p>
-            <Button size="lg" className="w-fit group mt-auto">Join Community</Button>
+            
+            <a href="https://www.instagram.com/hxtls_dao" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="w-fit group mt-auto">
+                Join Community
+              </Button>
+            </a>
           </GridItem>
           
           <GridItem>
@@ -106,10 +111,10 @@ export function GetInvolvedSection() {
               Have a question, partnership proposal, or just want to say hi? We'd love to hear from you.
             </p>
             <a
-              href="mailto:hxtlsdao@gmail.com"
+              href="mailto:admin@hxtls.com"
               className="inline-flex items-center gap-2 text-primary font-bold text-lg hover:text-cyan-400 transition-colors duration-200 group mt-auto"
             >
-              hxtlsdao@gmail.com
+              adminhxtls@gmail.com
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
           </GridItem>

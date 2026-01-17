@@ -12,8 +12,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'], // The default body font
-        pixel: ['"Pixelify Sans"', 'sans-serif'], // The headline font
+            body: ['Manrope', 'system-ui', 'sans-serif'],     // main body font
+    hero: [ 'poppins'], // hero font
       },
       colors: {
         border: "hsl(var(--border))",

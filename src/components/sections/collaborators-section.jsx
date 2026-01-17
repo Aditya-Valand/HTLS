@@ -46,10 +46,7 @@ export function CollaboratorsSection() {
                   className="h-12 w-auto invert brightness-0 dark:invert-0 dark:brightness-100 transition-all duration-300"
                 />
                 
-                 <div className="flex items-center text-sm text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                   <Handshake className="h-4 w-4 mr-2" />
-                   <span>Official Partner</span>
-                </div>
+                
               </div>
             </div>
           </a>

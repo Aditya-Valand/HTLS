@@ -103,9 +103,7 @@ export function MissionSection() {
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-foreground">{point.title}</h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">{point.description}</p>
-                <div className="flex items-center text-[var(--crypto-primary)] font-medium group-hover:translate-x-2 transition-transform duration-300">
-                  Learn More <ArrowRight className="w-4 h-4 ml-2" />
-                </div>
+                
               </Card>
             </motion.div>
           ))}
